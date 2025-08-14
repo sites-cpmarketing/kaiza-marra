@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 12 78% 78%; /* #F2BFAF - Soft Peach */
+    --primary-foreground: 240 10% 3.9%;
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 240 4% 25%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 12 78% 78%;
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    @apply min-h-screen;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline text-balance;
+  }
+
+  h1 { @apply text-clamp-h1 font-semibold; }
+  h2 { @apply text-clamp-h2 font-semibold; }
+  p, li, a, span, div { @apply text-base; }
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+
+/* --- NOISE BACKGROUND --- */
+.noise-bg {
+  position: relative;
+}
+.noise-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClG/DbAAAAMFBMVEX///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACgkf/OAAAAD3RSTlP5/e/z5/fI5/ffyOf3/e/n/fInAAAAwklEQVQ4y92TwQ3DMAxFe1EEFEVnToGzQJk3T1CnHECZdMBb0D+gU6JGogmR2N7bH/C9h1/e+x9099cff/8hQAAgAALgAAFgABBABSAACkABFEABeIABRBAAXeAAG6AAGaAAFcAAKzD/wA+wAB/gAnzAAbw0/8AP8AB/wAX/ABf8AF/wA3zAHPgR13wB23wA3fADffAGffAEXfAFXfAFXfAFv/AHv/AHT/AFX/AF3/AFf/AFH/AGH/AHv/AHz/AHz/AP//D/wA/wE/wA/wA3/AB/wAX/AF/wB3wB3wB3wB2wB2wB2wBXwBnwBnwBnwBmwBmzAWyAAAAAQBQRQARGABvAF4AagBGAEkAagBFAEcAZQBoAGUEaABvAFgAZQBbAGoAVgBbAGkAZgBoAGkAZwBqAGkAZQBoAGUAYQBrAG8AbQBqAGoAYwBqAGkAYgBoAGQAYwBqAGgAYgBvAGoAaABpAGIAZwBqAGYAZwBqAGYAZwBqAGQAYABuAGUAYABlAG8AZQBqAGUAYABpAG8AYQBqAGgAZQBjAGkAZQBkAGUAYQBkAGIAZABkAGMAZABkAGAAZQBkAGMAYwBmAGMAYQBiAGIAYQBkAGYAYwBmAQAEBREUEhEUERUUDxUFEhAREBIFEhQSFRISEhAQEA8QDw4ODg4NDg4NDg0NDg0MDAsKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgr/wA8P/A8P/A8P/A8P/A8P/A8O/A4O/A4N/A0N/A0M/AwM/AsL/AsK/AoK/AoK/AoK/AoK/AoK/AoK/AoK/AoK/AoK/AoK/AoK/AoK/AoK/AoK/AoK/wr/Cv8K/woAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD8AvwE/AL8AgAE/AL8AgAC/AL8AvwC/AKAAoACgAKAAoACgAKAAoACgAKAAoACgAKAAoACgAKAAoACgAKAAoACgAL/Av8C/wL/Av8C/wL/Av8C/wL/Av8C/wL/Av8C/wL/Av8C/wL/Av8C/wL/AgMCAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwIDAwICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwICAwICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgP//A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AAAAAAD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AAAAAAAAAAAA//+/f//v3//79//+/f//v3//79//+/f//v3//+/f//v3//+/f//v3//79//+/f//v3//+/f//v3//+/f//v3//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//v3//+/f//v3//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v3//+/f//v_gGgPmoAAAAASUVORK5CYII=');
+  pointer-events: none;
+  opacity: 0.03;
+  z-index: -1;
+}
+
+/* --- CURSOR GLOW --- */
+.cursor-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 400px; /* Increased size */
+  height: 400px;
+  background-image: radial-gradient(circle at center, hsla(var(--primary) / 0.2) 0%, transparent 70%); /* Softer glow */
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 30;
+  transition: transform 0.1s ease-out;
+  filter: blur(40px); /* Increased blur */
+}
+
+/* --- SPOTLIGHTS --- */
+.spotlight {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background-image: radial-gradient(circle, hsla(var(--primary) / 0.15) 0%, transparent 60%);
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.spotlight-2 {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 600px;
+  height: 600px;
+  background-image: radial-gradient(circle, hsla(var(--primary) / 0.1) 0%, transparent 70%);
+  filter: blur(60px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+/* --- ANIMATED BUTTON --- */
+.animated-button {
+  position: relative;
+  overflow: hidden;
+  border-color: hsl(var(--primary) / 0.3);
+  transition: all 0.3s ease;
+}
+
+.animated-button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(800px circle at var(--x) var(--y), hsl(var(--primary) / 0.2), transparent 40%);
+  opacity: 0;
+  transition: opacity 0.5s;
+  border-radius: inherit;
+}
+.animated-button:hover::before {
+  opacity: 1;
+}
+.animated-button:active {
+  transform: scale(0.98);
+}
+
+
+/* --- ANIMATED LINK --- */
+.animated-link {
+  position: relative;
+  text-decoration: none;
+  color: hsl(var(--foreground) / 0.8);
+  transition: color 0.3s ease;
+}
+
+.animated-link:hover {
+  color: hsl(var(--foreground));
+}
+
+.animated-link::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -4px;
+  left: 0;
+  background-color: hsl(var(--primary));
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animated-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+}
+
+/* --- CARD TILT & BORDER GRADIENT --- */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.card-tilt {
+  transform-style: preserve-3d;
+  transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.group:hover .card-tilt {
+  transform: rotateX(var(--rotate-x, 0)) rotateY(var(--rotate-y, 0)) scale3d(1.05, 1.05, 1.05);
+}
+
+.border-gradient {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: radial-gradient(400px circle at var(--x) var(--y), hsl(var(--primary) / 0.5), transparent 80%);
+  -webkit-mask:
+     linear-gradient(#fff 0 0) content-box,
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
